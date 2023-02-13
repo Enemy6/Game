@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Catch the Ball</title>
+    <style>
+      #container {
+        width: 500px;
+        height: 500px;
+        border: 1px solid black;
+        position: relative;
+      }
+      #ball {
+        width: 50px;
+        height: 50px;
+        background-color: red;
+        border-radius: 25px;
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body onload="startGame()">
+    <h1>Catch the Ball</h1>
+    <div id="container">
+      <div id="ball"></div>
+    </div>
+  </body>
+  <script>
+    function startGame() {
+      var ball = document.getElementById("ball");
+      var x = Math.floor(Math.random() * 450);
+      var y = Math.floor(Math.random() * 450);
+      ball.style.left = x + "px";
+      ball.style.top = y + "px";
+      ball.onclick = function() {
+        alert("You caught the ball!");
+        startGame();
+      };
+    }
+  </script>
+</html>
